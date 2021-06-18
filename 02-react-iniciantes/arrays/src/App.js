@@ -1,10 +1,15 @@
 import React from "react";
 
 const App = () => {
-  const produtos = [<li></li>, <li></li>, <li></li>];
+  const animes = ["One Piece", "Attack Titan", "Jujutsu Kaisen", "Dragon Ball"];
 
-  console.log(produtos);
-  return <div></div>;
+  return (
+    <ul>
+      {animes.map((filme) => (
+        <li key={filme}>{filme}</li>
+      ))}
+    </ul>
+  );
 };
 
 export default App;
