@@ -29,24 +29,25 @@ const mario = {
   ativa: false,
 };
 
-const styleBlue = {
-  color: "blue",
-};
-
-const styleRed = {
-  color: "red",
-};
 const App = () => {
   const dados = mario;
-  const total = dados.compras.map((item) => item.preco.replace("R$ ",""));
-
-  console.log(total);
+  const total = dados.compras
+    .map((item) => Number(item.preco.replace("R$ ", "")))
+    .reduce((a, b) => a + b);
 
   return (
     <>
       <p>Nome: {dados.cliente}</p>
       <p>Idade: {dados.idade}</p>
-      <p>Situacao: </p>
+      <p>Total: {total} </p>
+      <p>
+        Situacao:{" "}
+        <span style={{ color: dados.ativa ? "green" : "red" }}>
+          {dados.ativa ? "activa" : "Inativa"}
+        </span>
+      </p>
+      <p>Total: R$ {total}</p>
+      {total > 10000 && <p> Voce esta gastando muito</p>}
     </>
   );
 };
