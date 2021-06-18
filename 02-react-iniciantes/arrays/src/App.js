@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { configure } from "@testing-library/react";
 import React from "react";
 
 // const App = () => {
@@ -55,6 +56,26 @@ const produtos = [
 ];
 
 const App = () => {
-  return <></>;
+  const dados = produtos.filter(
+    ({ preco }) => Number(preco.replace("R$ ", "")) > 1500
+  );
+
+  return (
+    <>
+      {dados.map(({ id, nome, preco, cores }) => (
+        <div key={id}>
+          <h1>{nome}</h1>
+          <p>{preco}</p>
+          <ul>
+            {cores.map((cor) => (
+              <li style={{ backgroundColor: cor, color:'white' }} key={cor}>
+                {cor}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </>
+  );
 };
 export default App;
