@@ -2,8 +2,8 @@
 import { configure } from "@testing-library/react";
 import React from "react";
 
-import Header from "./header";
-import Footer from "./fotter";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const App3 = () => {
   const animes = ["One Piece", "Attack Titan", "Jujutsu Kaisen", "Dragon Ball"];
