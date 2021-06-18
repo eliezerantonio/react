@@ -1,11 +1,10 @@
 import ReactDom from 'react-dom';
 
 import React from 'react';
+
+import App from './App'
 //componente
 
-function App() {
-    return React.createElement('a', { href: 'https/www.origami.com' },'Origami');
-}
 
 
-ReactDom.render('Teste', document.getElementById('root'))
+ReactDom.render(App(), document.getElementById('root'))
