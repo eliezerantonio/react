@@ -80,9 +80,13 @@ import React from "react";
 // };
 
 const App = () => {
-  function heandleClick(event) {
+  function heandleScroll(event) {
     console.log(event);
   }
-  return <button onClick={heandleClick}>Clique</button>;
+  window.addEventListener("scroll", heandleScroll);
+
+  return (
+    <button onClick={(event) => alert(event.target.innerText)}>Compre violao</button>
+  );
 };
 export default App;
