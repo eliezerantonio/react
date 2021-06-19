@@ -4,6 +4,7 @@ import React from "react";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import Form from "./Form";
 
 const App3 = () => {
   const animes = ["One Piece", "Attack Titan", "Jujutsu Kaisen", "Dragon Ball"];
@@ -98,7 +99,7 @@ const App = () => {
   return (
     <>
       <Header />
-      App
+      <Form />
       <Footer />
     </>
   );

@@ -7,6 +7,7 @@ const Form = () => {
     <form>
       <p>
         <label htmlFor="nome">Nome</label>
+        <Input />
       </p>
 
       <p>
