@@ -6,7 +6,7 @@ const Form = () => {
   return (
     <div>
       <Input id="email" label="Email" required />
-      <Input id="password" label="Password" />
+      <Input id="password" type="password" label="Password" />
       <Button />
     </div>
   );

@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-unused-vars */
+import React from "react";
+import Header from "./Header";
+import Home from "./Home";
+import Produtos from "./Produtos";
 
 function App() {
+  let Pagina ;
+
+  const { pathname } = window.location;
+
+  if (pathname === "/produtos") {
+    Pagina = Produtos;
+  } else {
+    Pagina = Home;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Pagina />
     </div>
   );
 }
