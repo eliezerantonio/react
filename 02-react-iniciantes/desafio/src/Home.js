@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import Titulo from "./Titulo";
 
 function Home() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <div>
+      <section>
+        <Titulo texto="Home" />
+
+        <p>Pagina Home</p>
+      </section>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

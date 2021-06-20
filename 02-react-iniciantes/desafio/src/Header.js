@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return (
     <div>
-      <Header>
+      <header>
         <ul>
           <li>
             <a href="/">Home</a>
@@ -12,7 +12,7 @@ function Header() {
             <a href="/produtos">Produtos</a>
           </li>
         </ul>
-      </Header>
+      </header>
     </div>
   );
 }
