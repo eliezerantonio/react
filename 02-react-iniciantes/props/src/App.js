@@ -15,7 +15,7 @@ const App2 = () => {
   return (
     <>
       <div>
-        <Titulo cor="red" texto="Meu Titulo 1"></Titulo>
+        <Titulo cor="red" texto="Meu Titulo 1" />
         <Titulo cor="blue" texto="Meu Titulo 1" />
       </div>
     </>
