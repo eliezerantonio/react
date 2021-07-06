@@ -1,24 +1,13 @@
 import React from "react";
+import Produto from "./Produto";
 
 const App = () => {
-  const [contar, setContar] = React.useState(0);
-  const [dados, setDados] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("https://ranekapi.origamid.dev/json/api/produto/notebook")
-      .then((response) => response.json())
-      .then((json) => setDados(json));
-  }, []);
+  const [activo, setActivo] = React.useState(false);
 
   return (
     <div>
-      {dados && (
-        <div>
-          <h1>{dados.nome}</h1>
-          <h1>{dados.preco}</h1>
-        </div>
-      )}
-      <button onClick={() => setContar(contar + 1)}>{contar}</button>
+      {activo && <Produto />}
+      <button onClick={() => setActivo(!activo)}>Ativar</button>
     </div>
   );
 };
