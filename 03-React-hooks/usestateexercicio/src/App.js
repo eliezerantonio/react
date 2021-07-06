@@ -12,7 +12,7 @@ const App = () => {
     const response = await fetch(
       `https://ranekapi.origamid.dev/json/api/produto/${event.target.innerText}`
     );
-    //https://ranekapi.origamid.dev/json/api/produto/\
+    
 
     const json = await response.json();
     setDados(json);
