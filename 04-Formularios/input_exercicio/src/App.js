@@ -11,6 +11,11 @@ const formFields = [
     type: "email,",
   },
   {
+    id: "numerp",
+    label: "Numero",
+    type: "number,",
+  },
+  {
     id: "senha",
     label: "Senha",
     type: "password,",
