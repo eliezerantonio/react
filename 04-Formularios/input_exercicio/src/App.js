@@ -48,14 +48,34 @@ const App = () => {
 
     setForm({ ...form, [id]: value });
   }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const response = await fetch(
+      "https://ranekapi.origamid.dev/json/api/usuario",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      }
+    );
+
+    console.log(response);
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       {formFields.map(({ id, label, type }) => (
         <div key={id}>
           <label htmlFor={id}>{label}</label>
           <input type={type} id={id} value={form[id]} onChange={handleChange} />
         </div>
       ))}
+
+      <button>Enviar</button>
     </form>
   );
 };
