@@ -11,7 +11,7 @@ const formFields = [
     type: "email,",
   },
   {
-    id: "numerp",
+    id: "numero",
     label: "Numero",
     type: "number,",
   },
@@ -40,6 +40,7 @@ const App = () => {
   const [form, setForm] = React.useState({
     nome: "",
     email: "",
+    numero: "",
     senha: "",
     cep: "",
     rua: "",
