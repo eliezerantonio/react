@@ -15,6 +15,21 @@ const formFields = [
     label: "Senha",
     type: "password,",
   },
+  {
+    id: "cep",
+    label: "Cep",
+    type: "text,",
+  },
+  {
+    id: "rua",
+    label: "Rua",
+    type: "text,",
+  },
+  {
+    id: "cidade",
+    label: "Cidade",
+    type: "text,",
+  },
 ];
 const App = () => {
   const [form, setForm] = React.useState({
