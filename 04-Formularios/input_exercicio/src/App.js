@@ -36,7 +36,7 @@ const App = () => {
   return (
     <form>
       {formFields.map(({ id, label, type }) => (
-        <div>
+        <div key={id}>
           <label htmlFor={id}>{label}</label>
           <input type={type} id={id} value={form[id]} onChange={handleChange} />
         </div>
