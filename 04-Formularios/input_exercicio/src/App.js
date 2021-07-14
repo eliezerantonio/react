@@ -1,5 +1,21 @@
 import React from "react";
-
+const formFields = [
+  {
+    id: "nome",
+    label: "Nome",
+    type: "text,",
+  },
+  {
+    id: "email",
+    label: "E-mail",
+    type: "email,",
+  },
+  {
+    id: "senha",
+    label: "Senha",
+    type: "password,",
+  },
+];
 const App = () => {
   const [form, setForm] = React.useState({
     nome: "",
@@ -18,10 +34,14 @@ const App = () => {
     setForm({ ...form, [id]: value });
   }
   return (
-    <div>
-      <label htmlFor="nome">Nome</label>
-      <input type="text" id="nome" value={form.nome} onChange={handleChange} />
-    </div>
+    <form>
+      {formFields.map(({ id, label, type }) => (
+        <div>
+          <label htmlFor={id}>{label}</label>
+          <input type={type} id={id} value={form[id]} onChange={handleChange} />
+        </div>
+      ))}
+    </form>
   );
 };
 
