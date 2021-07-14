@@ -44,7 +44,7 @@ const App = () => {
         ...acc,
         [field.id]: "",
       };
-    })
+    }, {})
   );
 
   const [response, setResponse] = React.useState(null);
@@ -86,3 +86,15 @@ const App = () => {
 };
 
 export default App;
+// const [textarea, setTextarea] = React.useState("");
+
+// return (
+//   <form>
+//     <textarea
+//       value={textarea}
+//       onChange={({ target }) => setTextarea(target.value)}
+//       rows="5"
+//     />
+//     {textarea}
+//   </form>
+// );
