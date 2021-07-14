@@ -36,18 +36,18 @@ const formFields = [
     type: "text,",
   },
 ];
+
 const App = () => {
-  const [form, setForm] = React.useState({
-    nome: "",
-    email: "",
-    numero: "",
-    senha: "",
-    cep: "",
-    rua: "",
-    bairro: "",
-    cidade: "",
-    estado: "",
-  });
+  const [form, setForm] = React.useState(
+    formFields.reduce((acc, field) => {
+      return {
+        ...acc,
+        [field.id]: "",
+      };
+    })
+  );
+
+  const [response, setResponse] = React.useState(null);
 
   function handleChange({ target }) {
     const { id, value } = target;
@@ -58,7 +58,7 @@ const App = () => {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const response = await fetch(
+    const result = await fetch(
       "https://ranekapi.origamid.dev/json/api/usuario",
       {
         method: "POST",
@@ -68,8 +68,7 @@ const App = () => {
         body: JSON.stringify(form),
       }
     );
-
-    console.log(response);
+    setResponse(result);
   }
 
   return (
@@ -80,7 +79,7 @@ const App = () => {
           <input type={type} id={id} value={form[id]} onChange={handleChange} />
         </div>
       ))}
-
+      {response && response.ok && <p>Fomulario enviado</p>}
       <button>Enviar</button>
     </form>
   );
