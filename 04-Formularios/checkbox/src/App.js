@@ -22,5 +22,39 @@ import React from "react";
 
 // export default App;
 
+const App = () => {
+  const [cores, setCores] = React.useState([]);
 
-raf
+  function handleChange({ target }) {
+    if (target.checked) {
+      setCores([...cores, target.value]);
+    }
+  }
+  return (
+    <div>
+      <form>
+        <label>
+          <input
+            type="checkbox"
+            value="azul"
+            // checked={cores}
+            onChange={handleChange}
+          />
+          Azul
+        </label>{" "}
+        <br></br>
+        <label>
+          <input
+            type="checkbox"
+            value="vermelho"
+            // checked={cores}
+            onChange={handleChange}
+          />
+          Vermelho
+        </label>{" "}
+      </form>
+    </div>
+  );
+};
+
+export default App;
