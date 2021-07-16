@@ -23,13 +23,13 @@ import React from "react";
 // export default App;
 
 const App = () => {
-  const [cores, setCores] = React.useState([]);
+  const [cores, setCores] = React.useState(["vermelho",'azul']);
 
   function handleChange({ target }) {
     if (target.checked) {
       setCores([...cores, target.value]);
     } else {
-      setCores(cores.filter((cor)=>cor!==target.value));
+      setCores(cores.filter((cor) => cor !== target.value));
     }
   }
   return (
@@ -39,7 +39,7 @@ const App = () => {
           <input
             type="checkbox"
             value="azul"
-            // checked={cores}
+            checked={cores.includes("azul")}
             onChange={handleChange}
           />
           Azul
@@ -49,7 +49,7 @@ const App = () => {
           <input
             type="checkbox"
             value="vermelho"
-            // checked={cores}
+            checked={cores.includes("vermelho")}
             onChange={handleChange}
           />
           Vermelho
