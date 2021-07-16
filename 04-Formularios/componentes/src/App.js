@@ -3,7 +3,8 @@ import Input from "./Form/Input";
 const App = () => {
   return (
     <form>
-      <Input />
+      <Input label="Nome" id="nome" />
+      <Input label="E-mail" id="email" />
     </form>
   );
 };
