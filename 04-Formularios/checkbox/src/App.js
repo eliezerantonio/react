@@ -28,6 +28,8 @@ const App = () => {
   function handleChange({ target }) {
     if (target.checked) {
       setCores([...cores, target.value]);
+    } else {
+      setCores(cores.filter((cor)=>cor!==target.value));
     }
   }
   return (
