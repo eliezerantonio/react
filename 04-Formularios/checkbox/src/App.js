@@ -21,9 +21,9 @@ import React from "react";
 // };
 
 // export default App;
-
+const coresArray = ["azul", "laranja", "vermelho", "castanho", "roxo"];
 const App = () => {
-  const [cores, setCores] = React.useState(["vermelho",'azul']);
+  const [cores, setCores] = React.useState(["vermelho", "azul"]);
 
   function handleChange({ target }) {
     if (target.checked) {
@@ -35,25 +35,19 @@ const App = () => {
   return (
     <div>
       <form>
-        <label>
-          <input
-            type="checkbox"
-            value="azul"
-            checked={cores.includes("azul")}
-            onChange={handleChange}
-          />
-          Azul
-        </label>{" "}
-        <br></br>
-        <label>
-          <input
-            type="checkbox"
-            value="vermelho"
-            checked={cores.includes("vermelho")}
-            onChange={handleChange}
-          />
-          Vermelho
-        </label>{" "}
+        {coresArray.map((cor) => (
+          <label key={cor}>
+            {" "}
+            <input
+              type="checkbox"
+              value={cor}
+              checked={cores.includes( cor )}
+              onChange={handleChange}
+            />
+            {cor}
+            <br></br>
+          </label>
+        ))}
       </form>
     </div>
   );
