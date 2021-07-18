@@ -18,15 +18,22 @@ const App = () => {
   }
 
   function handleBlur({ target }) {
-    const validacao = validateCep(target.value);
-
-    console.log(validacao);
+    validateCep(target.value);
   }
   function handleChange({ target }) {
     setCep(target.value);
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (validateCep(cep)) {
+      console.log("enviar");
+    } else {
+      console.log("Nao enviar");
+    }
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Input
         label="cep"
         id="cep"
@@ -38,6 +45,7 @@ const App = () => {
         placeholder="00000-000"
       />
       {error && <p>error</p>}
+      <button>Enviar</button>
     </form>
   );
 };
