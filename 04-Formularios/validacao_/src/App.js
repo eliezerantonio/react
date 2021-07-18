@@ -1,22 +1,26 @@
 import React from "react";
-import Input from "./Form/Form";
+import Input from "./Form/Input";
 const App = () => {
-  const [bi, setBi] = React.useState("");
+  const [cep, setCep] = React.useState("");
 
   function handleBlur({ target }) {
-    console.log(target.value);
+    const regex = /^\d{5}-?\d{3}$/;
+    const validacao = regex.test(target.value);
+
+    console.log(validacao);
   }
   return (
     <form>
       <Input
-        label="BI"
-        id="bi"
-        value={bi}
-        setValue={setBi}
+        label="cep"
+        id="cep"
+        value={cep}
+        setValue={setCep}
         type="text"
         onBlur={handleBlur}
-        placeholder="0048-5808-2HA0-41"
+        placeholder="00000-000"
       />
+      {cep}
     </form>
   );
 };
