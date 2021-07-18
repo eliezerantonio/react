@@ -1,32 +1,14 @@
 import React from "react";
 import Input from "./Form/Input";
+import useForm from "./Hooks/useForm";
 const App = () => {
-  const [cep, setCep] = React.useState("");
-  const [error, setError] = React.useState(null);
+  const cep = useForm("cep");
 
-  function validateCep(value) {
-    if (value.length === 0) {
-      setError("Preencha um valor");
-      return false;
-    } else if (!/^\d{5}-?\d{3}$/.test(value)) {
-      setError("Preencha um valor valido");
-      return false;
-    } else {
-      setError(null);
-      return true;
-    }
-  }
-
-  function handleBlur({ target }) {
-    validateCep(target.value);
-  }
-  function handleChange({ target }) {
-    setCep(target.value);
-  }
+  console.log(cep);
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (validateCep(cep)) {
+    if (cep.validate()) {
       console.log("enviar");
     } else {
       console.log("Nao enviar");
@@ -37,14 +19,10 @@ const App = () => {
       <Input
         label="cep"
         id="cep"
-        value={cep}
-        setValue={setCep}
-        onChange={handleChange}
         type="text"
-        onBlur={handleBlur}
         placeholder="00000-000"
+        {...cep}
       />
-      {error && <p>error</p>}
       <button>Enviar</button>
     </form>
   );
