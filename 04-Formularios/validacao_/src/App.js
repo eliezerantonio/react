@@ -22,6 +22,9 @@ const App = () => {
 
     console.log(validacao);
   }
+  function handleChange({ target }) {
+    setCep(target.value);
+  }
   return (
     <form>
       <Input
@@ -29,6 +32,7 @@ const App = () => {
         id="cep"
         value={cep}
         setValue={setCep}
+        onChange={handleChange}
         type="text"
         onBlur={handleBlur}
         placeholder="00000-000"
