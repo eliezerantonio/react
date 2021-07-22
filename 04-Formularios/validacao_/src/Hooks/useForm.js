@@ -5,6 +5,10 @@ const types = {
     regex: /^\d{5}-?\d{3}$/,
     message: "Cep invalido",
   },
+  email: {
+    regex: /^\d{5}-?\d{3}$/,
+    message: "E-mail invalido",
+  },
 };
 
 const useForm = (type) => {

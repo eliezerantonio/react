@@ -3,6 +3,7 @@ import Input from "./Form/Input";
 import useForm from "./Hooks/useForm";
 const App = () => {
   const cep = useForm("cep");
+  const email = useForm("email");
 
   console.log(cep);
 
@@ -17,12 +18,14 @@ const App = () => {
   return (
     <form onSubmit={handleSubmit}>
       <Input
-        label="cep"
+        label="CEP"
         id="cep"
         type="text"
         placeholder="00000-000"
         {...cep}
-      />
+      />{" "}
+      <br />
+      <Input label="Email" id="email" type="email" {...email} />
       <button>Enviar</button>
     </form>
   );
