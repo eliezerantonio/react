@@ -45,12 +45,30 @@ const App = () => {
 
   const [slide, setSlide] = React.useState(0);
 
+  const [resultado, setResultado] = React.useState(null);
+
   function handleChange({ target }) {
     setRespostas({ ...respostas, [target.id]: target.value });
   }
+  function handleClick() {
+    if (slide < perguntas.length - 1) {
+      setSlide(slide + 1);
+    } else {
+      setSlide(slide + 1);
+      resultadoFinal();
+    }
+  }
 
+  function resultadoFinal() {
+    const corretas = perguntas.filter(
+      ({ id, resposta }) => respostas[id] === resposta
+    );
+
+    setResultado(`Voce acertou ${corretas.length} e de ${perguntas.length}`);
+    console.log(corretas);
+  }
   return (
-    <form>
+    <form onSubmit={(event) => event.preventDefault()}>
       {perguntas.map((pergunta, index) => (
         <Radio
           active={slide === index}
@@ -60,8 +78,11 @@ const App = () => {
           {...pergunta}
         />
       ))}
-
-      <button>Proximo</button>
+      {resultado ? (
+        <p>{resultado}</p>
+      ) : (
+        <button onClick={handleClick}>Proximo</button>
+      )}
     </form>
   );
 };
