@@ -6,16 +6,19 @@ const types = {
     message: "Cep invalido",
   },
   email: {
-    regex: /^\d{5}-?\d{3}$/,
+    // regex: /^\d{5}-?\d{3}$/,
     message: "E-mail invalido",
   },
 };
 
 const useForm = (type) => {
+
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(null);
 
-  function validate() {
+  function validate () {
+    
+  if (type === false) return true;
     if (value.length === 0) {
       setError("Preencha um valor");
       return false;

@@ -4,7 +4,8 @@ import useForm from "./Hooks/useForm";
 const App = () => {
   const cep = useForm("cep");
   const email = useForm("email");
-  const nome = useForm("nome");
+  const nome = useForm();
+  const sobrenome = useForm(null);
 
   console.log(cep);
 
@@ -18,12 +19,8 @@ const App = () => {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <Input
-        label="Nome"
-        id="nome"
-        type="text"
-        {...nome}
-      />{" "}
+      <Input label="Nome" id="nome" type="text" {...nome}  /> <br />
+      <Input label="Sobrenome" id="sobrenome" type="text" {...sobrenome} />{" "}
       <br />
       <Input
         label="CEP"
