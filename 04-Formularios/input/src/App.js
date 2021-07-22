@@ -43,10 +43,12 @@ const App = () => {
     p4: "",
   });
 
+  function handleChange({ target }) {}
+
   return (
     <form>
       {perguntas.map((pergunta) => (
-        <Radio {...pergunta} />
+        <Radio key={pergunta.id} onChange={handleChange} {...pergunta} />
       ))}
 
       <button>Proximo</button>
