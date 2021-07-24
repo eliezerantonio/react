@@ -1,41 +1,88 @@
 import React from "react";
+import Radio from "./Form/Radio";
 
+const perguntas = [
+  {
+    pergunta: "Qual método é utilizado para criar componentes?",
+    options: [
+      "React.makeComponent()",
+      "React.createComponent()",
+      "React.createElement()",
+    ],
+    resposta: "React.createElement()",
+    id: "p1",
+  },
+  {
+    pergunta: "Como importamos um componente externo?",
+    options: [
+      'import Component from "./Component"',
+      'require("./Component")',
+      'import "./Component"',
+    ],
+    resposta: 'import Component from "./Component"',
+    id: "p2",
+  },
+  {
+    pergunta: "Qual hook não é nativo?",
+    options: ["useEffect()", "useFetch()", "useCallback()"],
+    resposta: "useFetch()",
+    id: "p3",
+  },
+  {
+    pergunta: "Qual palavra deve ser utilizada para criarmos um hook?",
+    options: ["set", "get", "use"],
+    resposta: "use",
+    id: "p4",
+  },
+];
 const App = () => {
-  const [form, setForm] = React.useState({ nome: "", email: "" });
+  const [respostas, setRespostas] = React.useState({
+    p1: "",
+    p2: "",
+    p3: "",
+    p4: "",
+  });
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(event);
-  }
+  const [slide, setSlide] = React.useState(0);
+
+  const [resultado, setResultado] = React.useState(null);
 
   function handleChange({ target }) {
-    const { id, value } = target;
+    setRespostas({ ...respostas, [target.id]: target.value });
+  }
+  function handleClick() {
+    if (slide < perguntas.length - 1) {
+      setSlide(slide + 1);
+    } else {
+      setSlide(slide + 1);
+      resultadoFinal();
+    }
+  }
 
-    console.log(id, value);
+  function resultadoFinal() {
+    const corretas = perguntas.filter(
+      ({ id, resposta }) => respostas[id] === resposta
+    );
 
-    setForm({ ...form, [id]: value });
+    setResultado(`Voce acertou ${corretas.length} e de ${perguntas.length}`);
+    console.log(corretas);
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="nome">Nome</label>
-      <input
-        id="nome"
-        type="text"
-        name="nome"
-        value={form.nome}
-        onChange={handleChange}
-      />
-      {form.nome} <br />
-      <label>E-mail</label>
-      <input
-        id="email"
-        type="email"
-        name="email"
-        value={form.email}
-        onChange={handleChange}
-      />
-      {form.email}
-      <button>Enviar</button>
+    <form onSubmit={(event) => event.preventDefault()}>
+      {perguntas.map((pergunta, index) => (
+        <Radio
+          active={slide === index}
+          key={pergunta.id}
+          value={respostas[pergunta.id]}
+          onChange={handleChange}
+          {...pergunta}
+        />
+      ))}
+      {resultado ? (
+        <p>{resultado}</p>
+      ) : (
+        <button onClick={handleClick}>Proximo</button>
+      )}
     </form>
   );
 };
