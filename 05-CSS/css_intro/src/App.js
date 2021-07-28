@@ -1,11 +1,9 @@
 import React from "react";
-import "./App.css";
-
-import Title from "./Title";
+import Produto from "./Components/Produto";
 const App = () => {
   return (
-    <div className="container">
-      <Title />
+    <div>
+      <Produto />
     </div>
   );
 };
