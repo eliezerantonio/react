@@ -12,7 +12,7 @@ const Slide = ({ slides }) => {
   }, [activo]);
 
   function slideNext() {
-    if (activo < slides.length) setActivo(activo + 1);
+    if (activo < slides.length - 1) setActivo(activo + 1);
   }
 
   function slidePrev() {
