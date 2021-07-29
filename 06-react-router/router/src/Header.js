@@ -7,7 +7,7 @@ const Header = () => {
       <NavLink to="/" end>
         Home
       </NavLink>{" "}
-      | <NavLink to="sobre">Sobre</NavLink>| <NavLink to="login">Login</NavLink>
+      <NavLink to="sobre"> Sobre</NavLink> | <NavLink to="login">Login</NavLink>{" "}
     </nav>
   );
 };

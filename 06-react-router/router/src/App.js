@@ -5,6 +5,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Login from "./Login";
 import NaoEncontrada from "./NaoEncontrada";
+import Produto from "./Produto";
 import Sobre from "./Sobre";
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="sobre" element={<Sobre />} />
         <Route path="*" element={<NaoEncontrada />} />
+        <Route path="produto:id" element={<Produto />} />
         <Route path="login" element={<Login />} />
       </Routes>
     </BrowserRouter>
