@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 import { Link } from "react-router-dom";
-import Head from "./Head";
+// import Head from "./Head";
 
 const Home = () => {
   return (
