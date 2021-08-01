@@ -1,0 +1,13 @@
+.header {
+  margin-bottom: 2rem; /* 1rem siginfica 16px */
+}
+
+.header ul {
+  display: flex; /* coloca um item do lado do outro*/
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+.header ul li {
+  margin-right: 1rem;
+}
