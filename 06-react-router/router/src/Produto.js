@@ -1,5 +1,6 @@
 import React from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
+
 const Produto = () => {
   const params = useParams();
 
@@ -10,6 +11,11 @@ const Produto = () => {
   return (
     <div>
       <h1>Produto {params.id}</h1>
+      <nav>
+        <NavLink to="">Descricao</NavLink>
+        <NavLink to="avaliacao">avalaicao</NavLink>
+        <NavLink to="customizado">Customizado</NavLink>
+      </nav>
     </div>
   );
 };
