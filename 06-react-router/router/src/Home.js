@@ -11,7 +11,7 @@ const Home = () => {
 
       <Helmet>
         <title>Dogs | Home</title>
-        <meta name="description" content=" Essa e a pagina Home"/>
+        <meta name="description" content=" Essa e a pagina Home" />
       </Helmet>
       <p>Pagina Home</p>
       <Link to="produto/notebook">Notebook</Link>
