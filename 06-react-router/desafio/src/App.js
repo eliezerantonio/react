@@ -1,9 +1,9 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Produtos from "./Components/Produtos";
-import Contato from "./Components/Contato";
+import Contacto from "./Components/Contacto";
 import "./App.css";
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
           {" "}
           <Routes>
             <Route path="/" element={<Produtos></Produtos>}></Route>
-            <Route path="contato" element={<Contato></Contato>}></Route>
+            <Route path="contacto" element={<Contacto></Contacto>}></Route>
           </Routes>
         </div>
         <Footer />
