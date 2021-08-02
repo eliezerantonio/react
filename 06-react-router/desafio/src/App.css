@@ -16,4 +16,43 @@ h1 {
   font-size: 1.4rem;
 }
 
+.animeLeft {
+  transform: TranslateX(-20px);
+  opacity: 0;
+  animation: animeLeft 0.3s forwards;
+}
 
+@keyframes animeLeft {
+  to {
+    transform: initial;
+    opacity: initial;
+  }
+}
+
+.loading {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  border: 10px solid #ccc;
+  border-right-color: transparent;
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+  margin: 0 auto; /*para centralizar*/
+  min-height: cal(100vh+10rem);
+}
+
+.content {
+  flex: 1;
+}
