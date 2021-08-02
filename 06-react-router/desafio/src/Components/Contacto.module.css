@@ -23,16 +23,3 @@
   background: #ddd;
   margin-right: 10px;
 }
-
-.animeLeft {
-  transform: TranslateX(-20px);
-  opacity: 0;
-  animation: animeLeft 0.3s forwards;
-}
-
-@keyframes animeLeft {
-  to {
-    transform: initial;
-    opacity: initial;
-  }
-}
