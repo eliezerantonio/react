@@ -29,3 +29,10 @@
   opacity: 0;
   animation: animeLeft 0.3s forwards;
 }
+
+@keyframes animeLeft {
+  to {
+    transform: initial;
+    opacity: initial;
+  }
+}
