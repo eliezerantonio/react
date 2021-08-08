@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
@@ -6,7 +6,7 @@ import Produtos from "./Components/Produtos";
 import Contacto from "./Components/Contacto";
 import "./App.css";
 import Produto from "./Components/Produto";
-const App = () => {
+const App = ()  => {
   return (
     <div className="App">
       <BrowserRouter>
