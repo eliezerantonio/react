@@ -7,6 +7,9 @@ const Login = () => {
     <div>
       <Routes>
         <Route path="/login" component={<LoginForm />} />
+        <Route path="/login" component={<LoginForm />} />
+        <Route path="/login" component={<LoginForm />} />
+        <Route path="/login" component={<LoginForm />} />
       </Routes>
     </div>
   );
