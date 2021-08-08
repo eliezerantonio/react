@@ -18,7 +18,7 @@ const LoginForm = () => {
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuario" type="text" name="username" />
         <Input label="Senha" type="password" name="password" />
-       <Button/>
+        <Button>Entrar</Button>
       </form>
       <Link to="/login/criar">Cadastros</Link>
     </section>
